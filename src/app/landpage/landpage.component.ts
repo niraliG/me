@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Route} from '@angular/router';
+import {Route, Router} from '@angular/router';
 @Component({
   selector: 'app-landpage',
   templateUrl: './landpage.component.html',
@@ -7,9 +7,11 @@ import {Route} from '@angular/router';
 })
 export class LandpageComponent implements OnInit {
   route: Route;
-  constructor() {
+
+  constructor(private router: Router) {
      setTimeout(() => {
-       window.location.href = '/home';
+      //  window.location.href = '/home';
+      this.router.navigate(['/home']);
      }, 3000);
     }
     ngOnInit() {
